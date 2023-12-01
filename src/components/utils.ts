@@ -1,16 +1,7 @@
-import { LayersModel, loadLayersModel } from "@tensorflow/tfjs"
+import { LayersModel } from "@tensorflow/tfjs";
 
-export const loadModel = async (
-  modelPath: string,
-  setModel: (m: LayersModel) => void
-) => {
-  try {
-    console.log("Loading")
-    setModel(await loadLayersModel(modelPath))
-    console.log("Model Loaded")
-  } catch (error) {
-    console.error("Error loading the model", error)
-  }
+export const loadModel = async () => {
+  console.log("Model Loaded")
 }
 
 export const detect = (

@@ -1,6 +1,5 @@
 import * as tf from "@tensorflow/tfjs";
 import { useEffect, useState } from "react";
-
 import { detect, loadModel } from "../utils.ts";
 
 export default function DetectEmotion({
@@ -15,7 +14,8 @@ export default function DetectEmotion({
   const [prediction, setPrediction] = useState<string | null>(null)
 
   useEffect(() => {
-    loadModel("/assets/model/model.json", setModel)
+    // @ts-ignore
+    loadModel(setModel)
   }, [])
 
   return <div className="block">
