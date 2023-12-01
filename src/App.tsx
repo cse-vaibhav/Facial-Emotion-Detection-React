@@ -29,7 +29,7 @@ export default function App() {
 
         <div className='flex flex-col justify-center gap-1'>
           
-          <UploadFile filename={filename} setFileName={setFileName} imageSrc={imageSrc} setImageSrc={setImageSrc} />
+          <UploadFile filename={filename} setFileName={setFileName} setImageSrc={setImageSrc} />
           {/*<ImageCapture setImageSrc={setImageSrc} />*/}
           <DetectEmotion filename={filename} imageSrc={imageSrc} />
         </div>

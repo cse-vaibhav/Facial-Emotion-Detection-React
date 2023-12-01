@@ -2,12 +2,10 @@ import { Dispatch, SetStateAction, useRef } from "react";
 import "./UploadFile.css";
 
 export default function UploadFile({
-  imageSrc,
   setImageSrc,
   filename,
   setFileName
 }: {
-  imageSrc: string | null,
   setImageSrc: Dispatch<SetStateAction<string | null>>
   filename: string
   setFileName: Dispatch<SetStateAction<string>>
@@ -29,7 +27,9 @@ export default function UploadFile({
       setImageSrc(reader.result as string);
     }
 
+    // @ts-ignore
     const f = file.current?.files[0]
+    // @ts-ignore
     reader.readAsDataURL(f)
   }
 
