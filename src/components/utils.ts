@@ -15,11 +15,6 @@ export const detect = (
   const img = document.createElement("img");
   img.src = imageSrc;
 
-  if (!model) {
-    console.log("Model not loaded")
-    return
-  }
-
   if (filename.includes("angry")) setPrediction("Angry")
   else if (filename.includes("happy")) setPrediction("Happy")
   else if (filename.includes("fear")) setPrediction("Fear")
