@@ -14,6 +14,7 @@ export const detect = (
 
   const img = document.createElement("img");
   img.src = imageSrc;
+  if (!model) console.log("")
 
   if (filename.includes("angry")) setPrediction("Angry")
   else if (filename.includes("happy")) setPrediction("Happy")
