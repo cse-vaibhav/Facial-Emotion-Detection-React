@@ -15,7 +15,7 @@ export default function DetectEmotion({
   const [prediction, setPrediction] = useState<string | null>(null)
 
   useEffect(() => {
-    loadModel("/src/assets/model/model.json", setModel)
+    loadModel("../../assets/model/model.json", setModel)
   }, [])
 
   return <div className="block">
