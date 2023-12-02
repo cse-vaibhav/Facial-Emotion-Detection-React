@@ -4,14 +4,15 @@ import { detect, loadModel } from "../utils.ts";
 
 export default function DetectEmotion({
   imageSrc,
-  filename
+  filename,
+  setPrediction
 }: {
   imageSrc: string | null,
-  filename: string
+  filename: string,
+  setPrediction: (s: string) => void
 }) {
 
   const [model, setModel] = useState<tf.LayersModel | null>(null)
-  const [prediction, setPrediction] = useState<string | null>(null)
 
   useEffect(() => {
     // @ts-ignore
@@ -20,7 +21,6 @@ export default function DetectEmotion({
 
   return <div className="block">
     <button onClick={() => detect(imageSrc, model, filename, setPrediction)}>Detect Emotion</button>
-    <div>{prediction}</div>
   </div>
 
 }

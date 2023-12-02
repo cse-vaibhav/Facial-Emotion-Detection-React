@@ -9,13 +9,14 @@ export default function App() {
 
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [filename, setFileName] = useState("");
+  const [prediction, setPrediction] = useState("")
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   // remove video access
   // navigator.mediaDevices.getUserMedia({ video: false, audio: false })
 
   return (
-    <div>
+    <div className='flex flex-col items-center'>
       <h1 className="text-6xl font-bold">
         Facial Emotion Detection
       </h1>
@@ -31,9 +32,13 @@ export default function App() {
           
           <UploadFile filename={filename} setFileName={setFileName} setImageSrc={setImageSrc} />
           {/*<ImageCapture setImageSrc={setImageSrc} />*/}
-          <DetectEmotion filename={filename} imageSrc={imageSrc} />
+          <DetectEmotion setPrediction={setPrediction} filename={filename} imageSrc={imageSrc} />
         </div>
       </div>
+      {prediction && 
+        <div className='m-8 text-3xl bg-slate-800 px-8 py-6 rounded-xl'>
+          {prediction}
+        </div>}
     </div>
   )
 }
